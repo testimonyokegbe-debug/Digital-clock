@@ -15,7 +15,7 @@
 
 .container{
     width: min(800px, 90%);
-    height: 220px;
+    height: 240px; /* FIXED: increased for better spacing */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,21 +74,13 @@
     transform: translateX(-50%);
 }
 
-#hrs::after{
-    content: "HRS";
-}
-
-#min::after{
-    content: "MINS";
-}
-
-#sec::after{
-    content: "SECS";
-}
+#hrs::after{ content: "HRS"; }
+#min::after{ content: "MINS"; }
+#sec::after{ content: "SECS"; }
 
 #date{
     position: absolute;
-    bottom: 15px;
+    bottom: 10px; /* FIXED: better spacing */
     left: 50%;
     transform: translateX(-50%);
     font-size: 18px;
@@ -97,11 +89,17 @@
     letter-spacing: 1px;
 }
 
-/* Tablets */
+/* ===================== */
+/* TABLET (FIXED) */
+/* ===================== */
 @media (max-width: 768px){
 
     .container{
-        height: 150px;
+        height: 220px; /* FIXED */
+    }
+
+    .clock{
+        height: 140px; /* FIXED */
     }
 
     .clock span{
@@ -114,12 +112,18 @@
     }
 }
 
-/* Mobile Phones */
+/* ===================== */
+/* MOBILE (FIXED PROPERLY) */
+/* ===================== */
 @media (max-width: 480px){
 
     .container{
         width: 95%;
-        height: 120px;
+        height: 200px;
+    }
+
+    .clock{
+        height: 120px; /* FIXED */
     }
 
     .clock span{
@@ -132,10 +136,15 @@
         bottom: -15px;
     }
 
+    #date{
+        font-size: 14px;
+        bottom: 8px;
+    }
+
     .container::before,
     .container::after{
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .container::before{
